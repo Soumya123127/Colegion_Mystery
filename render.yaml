@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: the-last-chai
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: |
+      python -m pip install --upgrade pip
+      python -m pip install -r requirements.txt
+    startCommand: python scripts/server.py
+    envVars:
+      - key: PYTHONPATH
+        value: src
+      - key: PORT
+        generateValue: true

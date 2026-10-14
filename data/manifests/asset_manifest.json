@@ -1,0 +1,91 @@
+{
+  "fictional_simulation": true,
+  "asset_method": "Original OpenCV-generated synthetic evidence; no real people or external photos.",
+  "images": {
+    "cctv": "assets/images/cctv_corrupted.png",
+    "low_light": "assets/images/cctv_low_light.png",
+    "blurred_noisy": "assets/images/cctv_blurred_noisy.png",
+    "later_scene": "assets/images/lab_reference_2343.png",
+    "bag": "assets/images/red_bag_scene.png",
+    "warm_background_bag": "assets/images/red_bag_warm_background.png",
+    "red_distractors": "assets/images/red_objects_distractors.png",
+    "false_positive": "assets/images/similar_colour_scene.png",
+    "occluded": "assets/images/partially_obscured_bag.png",
+    "real_backpack_person": "assets/images/real_red_backpack_person.jpg",
+    "real_smartphone": "assets/images/real_smartphone_use.jpg",
+    "real_cup": "assets/images/real_coffee_cup.jpg"
+  },
+  "references": [
+    "assets/references/clock_enhanced_reference.png",
+    "assets/references/clock_crop_reference.png"
+  ],
+  "portraits": [
+    "assets/portraits/aarav.png",
+    "assets/portraits/kabir.png",
+    "assets/portraits/meera.png",
+    "assets/portraits/ramesh.png"
+  ],
+  "scene_ground_truth": {
+    "early_2342": {
+      "people": 2,
+      "mobile_phone": 1,
+      "chai_cups": 1,
+      "red_backpack": 1,
+      "secondary_bag": 1,
+      "prototype_device": 1
+    },
+    "later_2343": {
+      "people": 2,
+      "mobile_phone": 0,
+      "chai_cups": 2,
+      "red_backpack": 1,
+      "secondary_bag": 1,
+      "prototype_device": 0
+    },
+    "notes": "Counts are manual ground truth for the original synthetic drawings, not detector inference."
+  },
+  "video": {
+    "path": "assets/videos/corridor_staged.mp4",
+    "fps": 10,
+    "frame_count": 70,
+    "width": 640,
+    "height": 360,
+    "exit_line_x": 480,
+    "expected_crossing_frame": 56,
+    "expected_carrier": "Kabir (fictional case record; tracking only follows a red candidate)",
+    "scripted_time": "23:43",
+    "synthetic": true
+  },
+  "additional_videos": [
+    {
+      "path": "assets/videos/corridor_staged.mp4",
+      "fps": 10,
+      "frame_count": 70,
+      "width": 640,
+      "height": 360,
+      "exit_line_x": 480,
+      "expected_crossing_frame": 56,
+      "challenge": "steady movement"
+    },
+    {
+      "path": "assets/videos/corridor_fast.mp4",
+      "fps": 10,
+      "frame_count": 70,
+      "width": 640,
+      "height": 360,
+      "exit_line_x": 480,
+      "expected_crossing_frame": 52,
+      "challenge": "faster movement"
+    },
+    {
+      "path": "assets/videos/corridor_occlusion.mp4",
+      "fps": 10,
+      "frame_count": 90,
+      "width": 640,
+      "height": 360,
+      "exit_line_x": 480,
+      "expected_crossing_frame": 83,
+      "challenge": "temporary disappearance, lighting shift and small red distractor"
+    }
+  ]
+}

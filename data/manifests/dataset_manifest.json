@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "fictional_simulation": true,
+  "model": {
+    "path": "models/yolov8n.onnx",
+    "required": false,
+    "name": "Ultralytics YOLOv8n pretrained on COCO",
+    "source_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt",
+    "license": "AGPL-3.0; review Ultralytics terms before redistribution or deployment.",
+    "setup_command": "python -m pip install -e \".[model]\" && python scripts/setup_model.py",
+    "reason": "ONNX weights are prepared locally and ignored by Git; setup requires network access and the optional exporter."
+  },
+  "files": [
+    {
+      "filename": "assets/images/cctv_corrupted.png",
+      "purpose": "Level 1 low-contrast lab still with staged 23:42 overlay; Level 2 earlier scene",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "person silhouettes",
+        "red backpack",
+        "phone",
+        "chai cup",
+        "prototype prop"
+      ],
+      "timestamp": "23:42 staged overlay",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/cctv_low_light.png",
+      "purpose": "Level 1 low-light enhancement challenge",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "same staged lab scene"
+      ],
+      "timestamp": "23:42 staged overlay",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/cctv_blurred_noisy.png",
+      "purpose": "Level 1 blur and sensor-noise challenge",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "same staged lab scene"
+      ],
+      "timestamp": "23:42 staged overlay",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/lab_reference_2343.png",
+      "purpose": "Level 2 later-scene comparison reference",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "person silhouettes",
+        "red backpack",
+        "two chai cups"
+      ],
+      "timestamp": "23:43 staged reference",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/red_bag_scene.png",
+      "purpose": "Level 3 primary staged red-region scene",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "red backpack",
+        "red lab props"
+      ],
+      "timestamp": "23:42 staged",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/red_bag_warm_background.png",
+      "purpose": "Level 3 red backpack against a warm background",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "red backpack"
+      ],
+      "timestamp": "none",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/red_objects_distractors.png",
+      "purpose": "Level 3 multiple red and non-red distractors",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "red rectangular object",
+        "red circular object",
+        "blue object",
+        "green object"
+      ],
+      "timestamp": "none",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/similar_colour_scene.png",
+      "purpose": "Level 3 false-positive red label challenge",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "red backpack",
+        "red label"
+      ],
+      "timestamp": "23:42 staged",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/partially_obscured_bag.png",
+      "purpose": "Level 3 partial occlusion challenge",
+      "creation_method": "Generated locally with OpenCV drawing primitives; synthetic fictional evidence.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "partially obscured red backpack"
+      ],
+      "timestamp": "23:42 staged",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/real_red_backpack_person.jpg",
+      "purpose": "Person carrying a red backpack; real-photo YOLO class check.",
+      "creation_method": "960-pixel Wikimedia Commons thumbnail downloaded for this project.",
+      "license": "ambermb (Pixabay); Wikimedia Commons file Boy-in-brown-hoodie-carrying-red-backpack-while-walking-on-207697.jpg; CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Boy-in-brown-hoodie-carrying-red-backpack-while-walking-on-207697.jpg",
+      "expected_objects": [
+        "person",
+        "backpack"
+      ],
+      "timestamp": "not applicable",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/real_smartphone_use.jpg",
+      "purpose": "Real-photo YOLO person and cell-phone class check.",
+      "creation_method": "960-pixel Wikimedia Commons thumbnail downloaded for this project.",
+      "license": "Oc\u00e9anos y dados; Wikimedia Commons file Smartphone Use.jpg; CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Smartphone_Use.jpg",
+      "expected_objects": [
+        "person",
+        "cell phone"
+      ],
+      "timestamp": "not applicable",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/images/real_coffee_cup.jpg",
+      "purpose": "Real-photo YOLO cup class check.",
+      "creation_method": "960-pixel Wikimedia Commons thumbnail downloaded for this project.",
+      "license": "Edward; Wikimedia Commons file Cup of coffee in Caf\u00e9 Butter - Prenzlauer Berg, Berlin.jpg; CC0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cup_of_coffee_in_Caf%C3%A9_Butter_-_Prenzlauer_Berg,_Berlin.jpg",
+      "expected_objects": [
+        "cup"
+      ],
+      "timestamp": "not applicable",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/references/clock_enhanced_reference.png",
+      "purpose": "Prepared Level 1 comparison output, not a live-processing result.",
+      "creation_method": "Generated from cctv_corrupted.png using OpenCV CLAHE and crop.",
+      "license": "Original project-created derivative of synthetic project evidence.",
+      "expected_objects": [
+        "staged timestamp overlay"
+      ],
+      "timestamp": "23:42 staged overlay",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/references/clock_crop_reference.png",
+      "purpose": "Prepared Level 1 comparison output, not a live-processing result.",
+      "creation_method": "Generated from cctv_corrupted.png using OpenCV CLAHE and crop.",
+      "license": "Original project-created derivative of synthetic project evidence.",
+      "expected_objects": [
+        "staged timestamp overlay"
+      ],
+      "timestamp": "23:42 staged overlay",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/portraits/aarav.png",
+      "purpose": "Fictional suspect profile illustration.",
+      "creation_method": "Generated locally with OpenCV drawing primitives and initials; not a real-person likeness.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "initials-based fictional portrait"
+      ],
+      "timestamp": "not applicable",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/portraits/kabir.png",
+      "purpose": "Fictional suspect profile illustration.",
+      "creation_method": "Generated locally with OpenCV drawing primitives and initials; not a real-person likeness.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "initials-based fictional portrait"
+      ],
+      "timestamp": "not applicable",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/portraits/meera.png",
+      "purpose": "Fictional suspect profile illustration.",
+      "creation_method": "Generated locally with OpenCV drawing primitives and initials; not a real-person likeness.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "initials-based fictional portrait"
+      ],
+      "timestamp": "not applicable",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/portraits/ramesh.png",
+      "purpose": "Fictional suspect profile illustration.",
+      "creation_method": "Generated locally with OpenCV drawing primitives and initials; not a real-person likeness.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "initials-based fictional portrait"
+      ],
+      "timestamp": "not applicable",
+      "media_type": "image"
+    },
+    {
+      "filename": "assets/videos/corridor_staged.mp4",
+      "purpose": "Level 4 controlled tracking sample: steady movement",
+      "creation_method": "Generated locally frame-by-frame with OpenCV drawing primitives.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "synthetic carrier silhouette",
+        "red backpack"
+      ],
+      "timestamp": "23:43 is staged story context; crossing timestamp is clip-relative",
+      "media_type": "video",
+      "fps": 10,
+      "frame_count": 70,
+      "expected_crossing_frame": 56,
+      "exit_line_x": 480
+    },
+    {
+      "filename": "assets/videos/corridor_fast.mp4",
+      "purpose": "Level 4 controlled tracking sample: faster movement",
+      "creation_method": "Generated locally frame-by-frame with OpenCV drawing primitives.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "synthetic carrier silhouette",
+        "red backpack"
+      ],
+      "timestamp": "23:43 is staged story context; crossing timestamp is clip-relative",
+      "media_type": "video",
+      "fps": 10,
+      "frame_count": 70,
+      "expected_crossing_frame": 52,
+      "exit_line_x": 480
+    },
+    {
+      "filename": "assets/videos/corridor_occlusion.mp4",
+      "purpose": "Level 4 controlled tracking sample: temporary disappearance, lighting shift and small red distractor",
+      "creation_method": "Generated locally frame-by-frame with OpenCV drawing primitives.",
+      "license": "Original project-created asset; no external license or third-party source.",
+      "expected_objects": [
+        "synthetic carrier silhouette",
+        "red backpack"
+      ],
+      "timestamp": "23:43 is staged story context; crossing timestamp is clip-relative",
+      "media_type": "video",
+      "fps": 10,
+      "frame_count": 90,
+      "expected_crossing_frame": 83,
+      "exit_line_x": 480
+    }
+  ]
+}

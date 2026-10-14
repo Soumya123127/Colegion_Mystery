@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "the-last-chai"
+version = "1.0.0"
+description = "A fictional, beginner-friendly OpenCV investigation workshop"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.24,<2", "opencv-python-headless>=4.8,<5", "matplotlib>=3.7,<4"]
+
+[project.optional-dependencies]
+test = ["pytest>=7,<9", "nbformat>=5.9,<6"]
+model = ["ultralytics>=8.3,<9", "onnx>=1.16,<2"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

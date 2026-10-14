@@ -1,0 +1,24 @@
+{
+  "fictional_simulation": true,
+  "case_id": "ARG-2342",
+  "timeline": [
+    {"time": "23:35", "event": "Multiple people are present in or near the lab."},
+    {"time": "23:41", "event": "Professor Rao is last seen alive in the staged footage."},
+    {"time": "23:42", "event": "The incident occurs in the fictional story; image enhancement reveals a staged clock overlay, not a verified time of death."},
+    {"time": "23:43", "event": "Kabir removes the prototype using Aarav's backpack, according to the case file and staged corridor sequence."},
+    {"time": "23:44", "event": "The fictional surveillance corruption script executes."}
+  ],
+  "suspects": [
+    {"id": "aarav", "name": "Aarav", "role": "Research Assistant", "portrait": "assets/portraits/aarav.png", "alibi": "Claims he left before the incident.", "access": "Research area", "motive": "Prototype research dispute", "case_fact": "Owns the red backpack."},
+    {"id": "kabir", "name": "Kabir", "role": "Laboratory Technician", "portrait": "assets/portraits/kabir.png", "alibi": "Claims he did not approach the exit after 23:40.", "access": "Laboratory and surveillance equipment", "motive": "Conceal unauthorized prototype removal", "case_fact": "Canonical culprit; staged footage carrier and system-log access."},
+    {"id": "meera", "name": "Meera", "role": "Research Student", "portrait": "assets/portraits/meera.png", "alibi": "Was working on a separate experiment.", "access": "Research area", "motive": "Unknown; partial witness account", "case_fact": "Reports seeing someone carrying a bag."},
+    {"id": "ramesh", "name": "Ramesh", "role": "Security Guard", "portrait": "assets/portraits/ramesh.png", "alibi": "Claims nobody suspicious passed the exit.", "access": "Corridor and security station", "motive": "Unknown", "case_fact": "His account conflicts with the recovered staged sequence."}
+  ],
+  "evidence": [
+    {"id": "ev-time", "title": "Clock crop: 23:42", "description": "The enhanced prepared CCTV overlay reads 23:42.", "level": 1, "source": "assets/references/clock_crop_reference.png", "method": "CLAHE on a synthetic staged still", "expected": "23:42", "limitations": "A staged timestamp is not independent proof of time of death.", "kind": "visual"},
+    {"id": "ev-scene", "title": "Scene comparison", "description": "Prepared reference shows an extra cup; mobile phone and prototype are represented by explicit scene inventory comparison, not generic detector claims.", "level": 2, "source": "assets/images/cctv_corrupted.png; assets/images/lab_reference_2343.png", "method": "Scene inventory comparison; YOLO is optional", "expected": "Additional cup in later scene; phone and prototype absent from the prepared inventory.", "limitations": "COCO detector may miss small objects and cannot identify the fictional prototype.", "kind": "visual and case-file"},
+    {"id": "ev-owner", "title": "Backpack ownership record", "description": "Aarav's case-file statement identifies him as owner; the color detector only finds red regions.", "level": 3, "source": "data/manifests/evidence_registry.json", "method": "Fictional case-file record", "expected": "Aarav owns the red backpack.", "limitations": "Color segmentation cannot determine identity or ownership.", "kind": "case-file"},
+    {"id": "ev-trail", "title": "Exit-line trail", "description": "Actual color segmentation tracks a synthetic red candidate across the defined exit line.", "level": 4, "source": "assets/videos/corridor_staged.mp4", "method": "HSV mask, contours, recent-centre trail and line crossing", "expected": "Observed candidate crosses line near frame 56; case file identifies Kabir as carrier.", "limitations": "The generated silhouette is synthetic; tracking alone does not identify the carrier.", "kind": "visual and case-file"},
+    {"id": "ev-log", "title": "ARGUS system log", "description": "Prepared fictional log records the corruption-script event.", "level": 4, "source": "data/case_files/argus_system_log.txt", "method": "Separate fictional story asset", "expected": "23:44: CORRUPTION SCRIPT EXECUTED", "limitations": "This log is a prepared narrative artifact, not recovered by image processing.", "kind": "fictional log"}
+  ]
+}

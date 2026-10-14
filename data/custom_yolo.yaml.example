@@ -1,0 +1,11 @@
+path: custom_yolo
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: person
+  1: backpack
+  2: cup
+  3: phone
+  4: prototype
